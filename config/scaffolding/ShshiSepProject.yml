@@ -93,10 +93,10 @@ configurationVariables:
   : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionSettings.driverType
   : Progress® DataDirect®
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.poolIncrementSize
-  : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.startupRetryCount
   : "0"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.poolIncrementSize
+  : "1"
   jdbc.SAP TxStore Pool.expireTime: "60000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.password
   : "{AES}aYrXC43dTWsDUHRWG5mhTA=="
