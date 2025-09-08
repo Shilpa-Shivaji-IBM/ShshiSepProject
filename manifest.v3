@@ -11,17 +11,18 @@
   <record name="requires" javaclass="com.wm.util.Values">
     <value name="WmJDBCAdapter">10.3.0.0.34</value>
     <value name="WmCumulocityCoreLibraryProvider">10.7.0.0.20</value>
+    <value name="WmCumulocityProvider">10.7.0.0.6</value>
   </record>
   <null name="listACL"/>
   <value name="webappLoad">yes</value>
   <value name="reloadWithDependentPackage">yes</value>
-  <value name="build">44</value>
+  <value name="build">45</value>
   <null name="description"/>
   <value name="created_date">02-09-2025 09:33:02 GMT</value>
   <null name="extendedProperties"/>
   <null name="target_server_version"/>
   <value name="isProjectPackage">true</value>
-  <value name="lastUpdated">2025-09-08T09:22:56.291926973Z</value>
+  <value name="lastUpdated">2025-09-08T09:26:10.434654128Z</value>
   <value name="wmProjectId">fl361b33c6fd2553e1afd77a</value>
   <value name="creator">Shilpa Shivaji</value>
 </Values>
