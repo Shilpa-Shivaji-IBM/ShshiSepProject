@@ -11,6 +11,9 @@ packages:
   version: 10.3.0.0.34
   wpmServer: https://packages.webmethods.io
   wpmRegistry: licensed
+- name: WmCumulocityCoreLibraryProvider
+  wpmServer: https://packages.webmethods.io
+  wpmRegistry: supported
 services:
 - serviceName: project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_2
   packages:
@@ -34,8 +37,18 @@ configurationVariables:
   : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.startupRetryCount
   : "0"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.otherProperties
+  : loginTimeout=60;
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.databaseName
+  : ORCL
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.portNumber
   : "1521"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.networkProtocol
+  : ""
+  jdbcfunc.SAPTxStore.failFastMode: false
+  jdbc.SAP TxStore Pool.poolThreshold: "0"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.dbType
+  : ORACLE
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.user
   : sssss
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.keyStore
@@ -44,12 +57,14 @@ configurationVariables:
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
   : "10"
+  jdbc.SAP TxStore Pool.spyenabled: "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolable
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.serverName
   : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.heartBeatInterval
   : "0"
+  jdbc.SAP TxStore Pool.useSSL: "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.driverType
   : Progress® DataDirect®
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionEnabled
@@ -63,10 +78,30 @@ configurationVariables:
   : com.wm.dd.jdbcx.oracle.OracleDataSource
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.dbType
   : ORACLE
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.password
+  : "{AES}gOk3wygfWVjWqDc4SLehnQ=="
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionEnabled
   : "false"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.startupBackoffSecs
+  : "10"
   jdbc.SAP TxStore Pool.spyparms: SpyAttributes=(log=(file)logs/spy/SAP_TxStore_Pool.log;logTName=yes;timestamp=yes)
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.transactionType
+  : NO_TRANSACTION
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.blockingTimeout
+  : "1000"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.otherProperties
+  : loginTimeout=60;
   jdbc.SAP TxStore Pool.snoopenabled: "false"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.portNumber
+  : "1521"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.driverType
+  : Progress® DataDirect®
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
+  : "1000"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.databaseName
+  : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.startupRetryCount
   : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.poolIncrementSize
@@ -74,6 +109,7 @@ configurationVariables:
   jdbc.SAP TxStore Pool.expireTime: "60000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.password
   : "{AES}aYrXC43dTWsDUHRWG5mhTA=="
+  jdbc.SAP TxStore Pool.minConns: "5"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.poolable
   : "true"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.heartBeatInterval
@@ -81,19 +117,30 @@ configurationVariables:
   jdbc.SAP TxStore Pool.driverAlias: MySQL CC Driver
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.minimumPoolSize
   : "1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.minimumPoolSize
+  : "1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.networkProtocol
+  : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.minimumPoolSize
   : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.startupBackoffSecs
   : "10"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.oracle.OracleDataSource
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.transactionType
+  : NO_TRANSACTION
   jdbcfunc.SAPTxStore.connPoolAlias: SAP TxStore Pool
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.driverType
+  : Progress® DataDirect®
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.trustStore
   : ""
+  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.serverName
   : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.portNumber
   : "1521"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
+  : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.datasourceClass
   : com.wm.dd.jdbcx.oracle.OracleDataSource
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.poolable
@@ -108,6 +155,14 @@ configurationVariables:
   : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.user
   : JDBC_BVT
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
+  : NO_TRANSACTION
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.keyStore
+  : ""
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.password
+  : "{AES}r+UZgwNLfZPOuagC3yMLww=="
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
+  : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupRetryCount
   : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.serverName
@@ -119,62 +174,6 @@ configurationVariables:
   jdbc.SAP TxStore Pool.snoopparms: ddtdbg.ProtocolTraceEnable=true;ddtdbg.ProtocolTraceMaxline=16;ddtdbg.ProtocolTraceLocation=logs/snoop/SAP_TxStore_Pool.log;ddtdbg.ProtocolTraceShowTime=true
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.otherProperties
   : loginTimeout=60;
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
-  : "10"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.dbType
-  : ORACLE
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.otherProperties
-  : loginTimeout=60;
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.databaseName
-  : ORCL
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.networkProtocol
-  : ""
-  jdbcfunc.SAPTxStore.failFastMode: false
-  jdbc.SAP TxStore Pool.poolThreshold: "0"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.dbType
-  : ORACLE
-  jdbc.SAP TxStore Pool.spyenabled: "false"
-  jdbc.SAP TxStore Pool.useSSL: "false"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
-  : "1000"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.password
-  : "{AES}gOk3wygfWVjWqDc4SLehnQ=="
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.startupBackoffSecs
-  : "10"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.transactionType
-  : NO_TRANSACTION
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.blockingTimeout
-  : "1000"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.otherProperties
-  : loginTimeout=60;
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.portNumber
-  : "1521"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.driverType
-  : Progress® DataDirect®
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.expireTimeout
-  : "1000"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.databaseName
-  : ""
-  jdbc.SAP TxStore Pool.minConns: "5"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.minimumPoolSize
-  : "1"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.networkProtocol
-  : ""
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.transactionType
-  : NO_TRANSACTION
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.driverType
-  : Progress® DataDirect®
-  jdbc.SAP TxStore Pool.dbURL: jdbc:mysql://localhost:3306/SAPTRANSACTIONSTORE?useSSL=false&characterEncoding=utf-8&autoReconnect=true&maxReconnects=5&sessionVariables=wait_timeout=2147483
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.heartBeatInterval
-  : "0"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
-  : NO_TRANSACTION
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.keyStore
-  : ""
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.password
-  : "{AES}r+UZgwNLfZPOuagC3yMLww=="
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.poolIncrementSize
-  : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
   : ""
   jdbc.SAP TxStore Pool.userid: root
@@ -184,3 +183,7 @@ configurationVariables:
   : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.user
   : JDBC_BVT
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.dbType
+  : ORACLE
