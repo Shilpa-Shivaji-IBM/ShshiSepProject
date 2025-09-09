@@ -116,11 +116,25 @@ services:
     version: 10.3.0.0.34
     wpmServer: https://packages.webmethods.io
     wpmRegistry: licensed
+- serviceName: project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections:Database_7
+  packages:
+  - name: ShshiSepProject
+    version: "1.0"
+  - name: WmCumulocityProvider
+    version: 10.7.0.0.6
+  - name: WmCumulocityCoreLibraryProvider
+    version: 10.7.0.0.20
+  - name: WmJDBCAdapter
+    version: 10.3.0.0.34
+    wpmServer: https://packages.webmethods.io
+    wpmRegistry: licensed
 configurationVariables:
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cn.reuseAddr
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.poolIncrementSize
   : "1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.startupBackoffSecs
+  : "10"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cn.enableCompression
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.user
@@ -145,6 +159,8 @@ configurationVariables:
   : "1"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test1.cn.keepAliveInterval
   : "-1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.user
+  : JDBC_BVT
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.poolable
   : "true"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.heartBeatInterval
@@ -207,6 +223,12 @@ configurationVariables:
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionSettings.keyStore
   : ""
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.poolIncrementSize
+  : "1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.dbType
+  : ORACLE
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.poolable
+  : "false"
   jdbc.SAP TxStore Pool.minConns: "5"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionSettings.trustStore
   : ""
@@ -240,16 +262,22 @@ configurationVariables:
   : "true"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cn.reuseAddr
   : "false"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.keyStore
+  : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.trustStore
   : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionManagerSettings.poolable
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.user
   : JDBC_BVT
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.networkProtocol
+  : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionSettings.databaseName
   : ORCL
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.keyStore
   : ""
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.minimumPoolSize
+  : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.startupBackoffSecs
   : "10"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cn.validateAfterInactivity
@@ -325,6 +353,8 @@ configurationVariables:
   : "1000"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cr.preemptiveAuthEnabled
   : "false"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.serverName
+  : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.networkProtocol
   : ""
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cn.retryIfRequestSentOk
@@ -353,6 +383,8 @@ configurationVariables:
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.keyStore
   : ""
   jdbc.SAP TxStore Pool.userid: root
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.portNumber
+  : "1521"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionManagerSettings.expireTimeout
   : "1000"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test1.cn.enableSNI
@@ -371,6 +403,8 @@ configurationVariables:
   : Progress® DataDirect®
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cn.sockBuffSize
   : "8192"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.driverType
+  : Progress® DataDirect®
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionManagerSettings.blockingTimeout
   : "1000"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test1.cr.username
@@ -430,12 +464,16 @@ configurationVariables:
   : JDBC_BVT
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test1.minimumPoolSize
   : "1"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.datasourceClass
+  : com.wm.dd.jdbcx.oracle.OracleDataSource
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cr.authSchemeType
   : basic
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test1.startupRetryCount
   : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.startupRetryCount
+  : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.databaseName
   : ""
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cn.providerUrl
@@ -454,6 +492,8 @@ configurationVariables:
   : "4"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionSettings.serverName
   : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.password
+  : "{AES}gOk3wygfWVjWqDc4SLehnQ=="
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionSettings.databaseName
   : ORCL
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_5.connectionManagerSettings.startupRetryCount
@@ -489,6 +529,8 @@ configurationVariables:
   : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionSettings.networkProtocol
   : ""
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.transactionType
+  : NO_TRANSACTION
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.cn.providerUrl
   : https://<instance>.cumulocity.com
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_5.connectionSettings.databaseName
@@ -516,6 +558,8 @@ configurationVariables:
   : "1"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cn.connectTimeout
   : "30000"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.databaseName
+  : ORCL
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.serverName
   : sssss
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_4.connectionSettings.networkProtocol
@@ -525,6 +569,8 @@ configurationVariables:
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.maximumPoolSize
   : "10"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionManagerSettings.maximumPoolSize
+  : "10"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.maximumPoolSize
   : "10"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionSettings.driverType
   : Progress® DataDirect®
@@ -539,6 +585,8 @@ configurationVariables:
   jdbc.SAP TxStore Pool.poolThreshold: "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.dbType
   : ORACLE
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionEnabled
+  : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionManagerSettings.poolable
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_6.connectionManagerSettings.startupRetryCount
@@ -548,6 +596,8 @@ configurationVariables:
   : "false"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:testshshi.cr.authSchemeType
   : basic
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.heartBeatInterval
+  : "0"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionManagerSettings.blockingTimeout
   : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_3.connectionManagerSettings.startupBackoffSecs
@@ -558,10 +608,12 @@ configurationVariables:
   : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_5.connectionManagerSettings.blockingTimeout
   : "1000"
-  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.portNumber
-  : "1521"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.driverType
   : Progress® DataDirect®
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.portNumber
+  : "1521"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.blockingTimeout
+  : "1000"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_5.connectionSettings.portNumber
   : "1521"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.expireTimeout
@@ -580,10 +632,14 @@ configurationVariables:
   : "1000"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.connectionEnabled
   : "true"
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionManagerSettings.expireTimeout
+  : "1000"
   ? cloudstreamsconnection.project..shshisep..WmCumulocityProvider..com_softwareag_cloudstreams_cumulocity_v0_9..connections:test.poolable
   : "false"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_1.connectionSettings.transactionType
   : NO_TRANSACTION
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.otherProperties
+  : loginTimeout=60;
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.keyStore
   : ""
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_2.connectionSettings.password
@@ -594,3 +650,5 @@ configurationVariables:
   : "1"
   ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_5.connectionSettings.serverName
   : adapter-oracle-121-on-amazonrds.cdmjexwbzoym.us-east-1.rds.amazonaws.com
+  ? artConnection.ShshiSepProject.project.shshisep.WmJDBCAdapter.com_wm_adapter_wmjdbc_JDBCAdapter.connections.Database_7.connectionSettings.trustStore
+  : ""
